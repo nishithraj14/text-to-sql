@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Business Intelligence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-white min-h-screen">
+
+<div class="max-w-6xl mx-auto px-6 py-16">
+  <h1 class="text-4xl font-bold mb-4">AI Text-to-SQL Analyst</h1>
+  <p class="text-slate-300 mb-8">
+    Ask real business questions in plain English. Powered by LLMs.
+  </p>
+
+  <textarea id="question"
+    class="w-full p-4 text-black rounded mb-4"
+    placeholder="Which state has highest total sales?"></textarea>
+
+  <button onclick="ask()"
+    class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded font-semibold">
+    Run Query
+  </button>
+
+  <div class="mt-8">
+    <h2 class="text-lg font-semibold mb-2">Output</h2>
+    <pre id="output"
+      class="bg-black p-4 rounded text-sm overflow-x-auto"></pre>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

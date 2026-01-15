@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+sqlalchemy
+pandas
+langchain
+langchain-openai
+openai
+jinja2
