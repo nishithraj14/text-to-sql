@@ -1,5 +1,9 @@
 AI Text-to-SQL Analyst
 Natural Language to SQL using LLMs, FastAPI & SQLite
+
+<img width="1760" height="937" alt="Screenshot 2026-02-04 191611" src="https://github.com/user-attachments/assets/07de2d6c-e7cb-4872-bd80-bf579c647347" />
+
+
 📌 Problem Statement
 
 Business stakeholders often need insights from structured data but lack SQL knowledge. They rely on analysts or engineers to translate business questions into SQL queries, which leads to:
