@@ -1,6 +1,80 @@
 AI Text-to-SQL Analyst
 Natural Language to SQL using LLMs, FastAPI & SQLite
 
+
+# 📊 AI Text-to-SQL Analyst (Agentic LLM System)
+
+🚀 **Live Demo (Streamlit Cloud)**  
+👉 https://text-to-sql-zmmuoyd5qiatnh6bqfnpfp.streamlit.app/
+
+> ⚠️ **Note:** This is a demo deployment on Streamlit Cloud (free tier).  
+> The app may take ~15–30 seconds to wake up after inactivity.
+
+---
+
+## 🔍 What This Demo Shows
+
+This project demonstrates an **agentic Text-to-SQL system** that allows users to ask
+**business questions in natural language** and automatically:
+
+1. Understand the database schema  
+2. Generate **valid SQLite SQL** using an LLM  
+3. Execute the query on a real database  
+4. Return structured results
+
+The system is designed to work on **real tabular business data**, not toy examples.
+
+---
+
+## 🧪 Try Asking Questions Like
+
+- *Which state has the highest total sales?*  
+- *What are the top 5 products by revenue?*  
+- *Show total sales by region.*  
+- *Which customers placed the most orders?*  
+- *Compare sales across states.*
+
+---
+
+## 🧠 System Design (High Level)
+
+- **LLM-powered SQL generation** (LangChain + OpenAI)
+- **Schema-aware prompting** (no hardcoded queries)
+- **Agentic execution loop**:
+  - Question → SQL → Execution → Result
+- **SQLite backend** with real business-style tables
+- **Streamlit UI** for zero-setup demo
+
+---
+
+## ⚙️ Demo vs Production Architecture
+
+This repository contains **two layers**:
+
+### 1️⃣ Production Core (Backend)
+- FastAPI-based service
+- Agentic SQL generation logic
+- Modular, testable architecture
+- Designed for API / microservice deployment
+
+### 2️⃣ Demo Layer (Streamlit)
+- `app_streamlit.py`
+- Built **only for showcasing**
+- No FastAPI required
+- Uses the same core logic as production
+
+This separation mirrors how real AI systems are built in industry.
+
+---
+
+## 📁 Data & Execution Notes
+
+- The SQLite database (`analytics.db`) and CSV files are included **only for demo purposes**
+- In a real production setup, the database would be hosted separately (e.g., Postgres, Snowflake)
+
+---
+
+
 <img width="1760" height="937" alt="Screenshot 2026-02-04 191611" src="https://github.com/user-attachments/assets/07de2d6c-e7cb-4872-bd80-bf579c647347" />
 
 
