@@ -10,15 +10,18 @@ Purpose:
 """
 
 # --------------------------------------------------
-# Fix Python path for Streamlit Cloud
+# Absolute project root (Streamlit Cloud SAFE)
 # --------------------------------------------------
 import sys
-import os
-sys.path.append(os.getcwd())
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
 # --------------------------------------------------
 # Standard imports
 # --------------------------------------------------
+import os
 import pandas as pd
 import streamlit as st
 
@@ -78,10 +81,9 @@ engine, schema = load_system()
 # --------------------------------------------------
 st.sidebar.header("📁 Available Datasets")
 
-BASE_DIR = os.getcwd()
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = BASE_DIR / "data"
 
-csv_files = [f for f in os.listdir(DATA_DIR) if f.endswith(".csv")]
+csv_files = sorted([f.name for f in DATA_DIR.glob("*.csv")])
 
 selected_csv = st.sidebar.selectbox(
     "Browse CSV files",
@@ -89,9 +91,7 @@ selected_csv = st.sidebar.selectbox(
 )
 
 if selected_csv:
-    csv_path = os.path.join(DATA_DIR, selected_csv)
-    df = pd.read_csv(csv_path)
-
+    df = pd.read_csv(DATA_DIR / selected_csv)
     st.sidebar.markdown("**Preview**")
     st.sidebar.dataframe(df.head(10), use_container_width=True)
 
