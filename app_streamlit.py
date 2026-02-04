@@ -9,7 +9,16 @@ Purpose:
 - Allow recruiters to explore CSV data
 """
 
+# --------------------------------------------------
+# Fix Python path for Streamlit Cloud
+# --------------------------------------------------
+import sys
 import os
+sys.path.append(os.getcwd())
+
+# --------------------------------------------------
+# Standard imports
+# --------------------------------------------------
 import pandas as pd
 import streamlit as st
 
@@ -18,7 +27,7 @@ from src.database import get_engine
 from src.schema import get_schema
 
 # --------------------------------------------------
-# Secure OpenAI key handling (local .env / Streamlit Cloud)
+# Secure OpenAI key handling
 # --------------------------------------------------
 OPENAI_API_KEY = None
 try:
@@ -69,7 +78,9 @@ engine, schema = load_system()
 # --------------------------------------------------
 st.sidebar.header("📁 Available Datasets")
 
-DATA_DIR = "data"
+BASE_DIR = os.getcwd()
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
 csv_files = [f for f in os.listdir(DATA_DIR) if f.endswith(".csv")]
 
 selected_csv = st.sidebar.selectbox(
@@ -91,12 +102,12 @@ st.markdown("### 💡 Example Questions")
 
 st.markdown(
     """
-    - Which state has the highest total sales?
-    - What are the top 5 products by revenue?
-    - Show total sales by region.
-    - Which customers placed the most orders?
-    - Compare sales across states.
-    """
+- Which state has the highest total sales?
+- What are the top 5 products by revenue?
+- Show total sales by region.
+- Which customers placed the most orders?
+- Compare sales across states.
+"""
 )
 
 st.divider()
