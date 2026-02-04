@@ -6,8 +6,7 @@ venv/
 __pycache__/
 *.pyc
 
-# Database (optional – recommended)
-analytics.db
+
 
 # OS / editor
 .DS_Store
