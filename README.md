@@ -11,6 +11,8 @@ Natural Language to SQL using LLMs, FastAPI & SQLite
 > The app may take ~15–30 seconds to wake up after inactivity.
 
 ---
+![texttosql](https://github.com/user-attachments/assets/01b7df2b-28a4-49c2-a1d3-05ccc5ed2cc9)
+
 
 ## 🔍 What This Demo Shows
 
